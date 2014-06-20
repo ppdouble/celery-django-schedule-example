@@ -22,15 +22,18 @@ CELERYBEAT_SCHEDULE = {
         'task': 'djproj.celery.hello',
         'schedule': timedelta(seconds=4)
     }, 
-    'tuantask1': {
-        'task': 'apps.app1.tuan.tuantask1',
-        'schedule': timedelta(seconds=6)
-    },  
+    #'tuantask1': {
+    #    'task': 'apps.app1.tasks.tuantask1',
+    #    'schedule': timedelta(seconds=6)
+    #},  
     #'tuantask2': {
     #    'task': 'app1.tuan.tuantask2',
     #    'schedule': crontab(minute=55, hour=17)
     #}
 }
+#CELERY_IMPORTS = (
+#    'apps.app1.tuan',
+#)
 
 TIME_ZONE = 'Asia/Shanghai'
 

@@ -15,6 +15,7 @@ app = Celery('djproj')
 # pickle the object when using Windows.
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+#import apps.app1.tuan
 
 @app.task(bind=True)
 def debug_task(self):
