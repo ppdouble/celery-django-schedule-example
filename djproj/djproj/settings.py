@@ -14,26 +14,35 @@ BROKER_URL = 'redis://localhost:6379/0'
 
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
-    #'defaulttask1': {
-    #    'task': 'djproj.celery.defaulttask1',
-    #    'schedule': timedelta(seconds=3)
-    #}, 
+    'defaulttask1': {
+        'task': 'djproj.celery.defaulttask1',
+        'schedule': timedelta(seconds=3)
+    }, 
     'hello': {
         'task': 'djproj.celery.hello',
         'schedule': timedelta(seconds=4)
     }, 
-    #'tuantask1': {
-    #    'task': 'apps.app1.tasks.tuantask1',
-    #    'schedule': timedelta(seconds=6)
-    #},  
-    #'tuantask2': {
-    #    'task': 'app1.tuan.tuantask2',
-    #    'schedule': crontab(minute=55, hour=17)
-    #}
+    'autodiscovertasks1': {
+        'task': 'apps.app1.tasks.autotask1',
+        'schedule': timedelta(seconds=5)
+    },  
+    'autodiscovertasks2': {
+        'task': 'apps.app1.tasks.autotask2',
+        'schedule': crontab(minute=55, hour=17)
+    },
+    'mytasks1': {
+        'task': 'apps.app2.mytasks.mytask1',
+        'schedule': timedelta(seconds=6)
+    },  
+    'mytasks2': {
+        'task': 'apps.app2.mytasks.mytask2',
+        'schedule': crontab(minute=55, hour=17)
+    }
 }
-#CELERY_IMPORTS = (
-#    'apps.app1.tuan',
-#)
+
+CELERY_IMPORTS = (
+    'apps.app1.mytasks',
+)
 
 TIME_ZONE = 'Asia/Shanghai'
 
