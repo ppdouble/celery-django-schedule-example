@@ -40,6 +40,7 @@ CELERYBEAT_SCHEDULE = {
     }
 }
 
+#import app2 manually
 CELERY_IMPORTS = (
     'apps.app2.mytasks',
 )
@@ -79,6 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.app1',
+    'apps.app2',
 )
 
 MIDDLEWARE_CLASSES = (
