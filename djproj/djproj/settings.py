@@ -41,7 +41,7 @@ CELERYBEAT_SCHEDULE = {
 }
 
 CELERY_IMPORTS = (
-    'apps.app1.mytasks',
+    'apps.app2.mytasks',
 )
 
 TIME_ZONE = 'Asia/Shanghai'
